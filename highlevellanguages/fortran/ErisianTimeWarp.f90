@@ -1,18 +1,18 @@
 program discordian_calendar
     implicit none
+
     ! Variable declarations
     integer :: gregorianYear, gregorianMonth, gregorianDay
     integer :: discordianYear, dayOfYear, dayOfSeason, season, dayOfWeek
-    character(len=10), dimension(5) :: seasons = (/ 'Chaos', 'Discord', 'Confusion', 'Bureaucracy', 'The Aftermath' /)
-    character(len=12), dimension(5) :: daysOfWeek = (/ 'Sweetmorn', 'Boomtime', 'Pungenday', 'Prickle-Prickle', 'Setting Orange' /)
+    character(len=10), parameter :: seasons(5) = (/ 'Chaos', 'Discord', 'Confusion', 'Bureaucracy', 'The Aftermath' /)
+    character(len=12), parameter :: daysOfWeek(5) = (/ 'Sweetmorn', 'Boomtime', 'Pungenday', 'Prickle-Prickle', 'Setting Orange' /)
 
     ! Input the Gregorian date
     print *, 'Enter the Gregorian date (year, month, day):'
     read *, gregorianYear, gregorianMonth, gregorianDay
 
     ! Calculate the Discordian date
-    call calculate_discordian_date(gregorianYear, gregorianMonth, gregorianDay, &
-                                   discordianYear, dayOfYear, dayOfSeason, season, dayOfWeek)
+    call calculate_discordian_date(gregorianYear, gregorianMonth, gregorianDay, discordianYear, dayOfYear, dayOfSeason, season, dayOfWeek)
 
     ! Output the Discordian date
     print *, 'Discordian Date:'
@@ -31,7 +31,7 @@ subroutine calculate_discordian_date(gYear, gMonth, gDay, dYear, dayOfYear, dayO
 
     ! Calculate total days since Discordian epoch
     ! (This is a simplified calculation; you'll need a proper Gregorian to Julian day number conversion)
-    totalDays = (gYear - 1166) * 365 + gMonth * 30 + gDay
+    totalDays = (gYear - 1166) * 365 + (gMonth - 1) * 30 + gDay
 
     ! Calculate the Discordian year and day of the year
     dYear = totalDays / 365

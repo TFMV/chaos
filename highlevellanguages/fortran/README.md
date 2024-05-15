@@ -1,5 +1,7 @@
 # Discordian Calendar
 
+![Time Warp](etw.webp)
+
 Naturally, we divide the year into five seasons of 73 days each. Each season is made up of 5 weeks of 5 days. The names of the seasons are Chaos, Discord, Confusion, Bureaucracy, and The Aftermath. The days of the week are Sweetmorn, Boomtime, Pungenday, Prickle-Prickle, and Setting Orange.
 
 ## Seasons and Days (Or Whatever We Call Them)
